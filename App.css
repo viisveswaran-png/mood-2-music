@@ -1,0 +1,184 @@
+/* ========= Typographic accents ========= */
+.gradient-text {
+  background: linear-gradient(90deg, #ffd7ff, #b39bff, #79c1ff);
+  -webkit-background-clip: text;
+  background-clip: text;
+  color: transparent;
+  font-weight: 800;
+  letter-spacing: .3px;
+
+  /* thin black outline */
+  -webkit-text-stroke: 0.6px #000;
+}
+
+/* ========= Global / Page ========= */
+:root {
+  --bg-1: #0b0b12;
+  --bg-2: #121225;
+  --bg-3: #171733;
+  --panel: rgba(16,16,24,.75);
+  --panel-border: #23233a;
+  --ink: #ffffff;
+  --ink-soft: #cfd2ff;
+  --brand-1: #6d5df6;
+  --brand-2: #a17cf5;
+}
+
+html, body, #root { height: 100%; }
+* { box-sizing: border-box; }
+
+.app-bg {
+  min-height: 100vh;
+  color: var(--ink);
+  background: linear-gradient(-45deg, var(--bg-1), var(--bg-2), var(--bg-3), #10101a);
+  background-size: 400% 400%;
+  animation: bgShift 18s ease infinite;
+}
+
+@keyframes bgShift {
+  0% { background-position: 0% 50%; }
+  50% { background-position: 100% 50%; }
+  100% { background-position: 0% 50%; }
+}
+
+/* Gentle floating music notes */
+.notes { position: fixed; inset: 0; pointer-events: none; overflow: hidden; }
+.note { position: absolute; opacity: .12; font-size: 26px; animation: float 14s linear infinite; }
+.note.n1 { left: 8%;  animation-delay: -2s; }
+.note.n2 { left: 22%; animation-delay: -6s; }
+.note.n3 { left: 38%; animation-delay: -10s; }
+.note.n4 { left: 56%; animation-delay: -4s; }
+.note.n5 { left: 74%; animation-delay: -8s; }
+.note.n6 { left: 88%; animation-delay: -12s; }
+
+@keyframes float {
+  0%   { transform: translateY(110vh) rotate(0deg);   }
+  100% { transform: translateY(-10vh) rotate(360deg); }
+}
+
+/* make the page truly full-screen */
+html, body, #root {
+  height: 100%;
+  width: 100%;
+  margin: 0;
+}
+
+/* ensure sizing is predictable across the app */
+*, *::before, *::after { box-sizing: border-box; }
+
+/* your main wrapper already exists; make it fill the viewport */
+.app-bg {
+  min-height: 100dvh;   /* dynamic viewport height */
+  width: 100%;
+}
+
+/* make container always full width */
+.container {
+  width: 100%;
+  max-width: 100% !important;  /* override any inherited limits */
+  margin: 0;
+  padding-left: 24px;
+  padding-right: 24px;
+}
+
+/* ========= Typographic accents ========= */
+.gradient-text {
+  background: linear-gradient(90deg, #ffd7ff, #b39bff, #79c1ff);
+  -webkit-background-clip: text;
+  background-clip: text;
+  color: transparent;
+  font-weight: 800;
+  letter-spacing: .3px;
+}
+
+/* ========= Cards, Inputs, Buttons ========= */
+.card {
+  background: var(--panel);
+  border: 1px solid var(--panel-border);
+  border-radius: 16px;
+  padding: 16px;
+  box-shadow: 0 12px 40px rgba(0,0,0,.25);
+}
+
+.input {
+  width: 100%;
+  padding: 12px 14px;
+  border-radius: 12px;
+  background: #171728;
+  border: 1px solid #252545;
+  color: var(--ink);
+  outline: none;
+}
+
+.btn {
+  padding: 10px 14px;
+  border-radius: 12px;
+  background: #26263b;
+  color: var(--ink);
+  border: 1px solid #2f2f4d;
+  cursor: pointer;
+  transition: transform 80ms ease, box-shadow 160ms ease, background 160ms ease;
+}
+.btn:hover { transform: translateY(-1px); box-shadow: 0 8px 20px rgba(0,0,0,.25); }
+.btn:active { transform: translateY(0); }
+
+.btn-primary {
+  background: linear-gradient(90deg, var(--brand-1), var(--brand-2));
+  border: none;
+}
+
+/* ========= Spinner (unused, but handy) ========= */
+.spinner {
+  width: 22px; height: 22px;
+  border: 3px solid rgba(255,255,255,.2);
+  border-top-color: #fff;
+  border-radius: 50%;
+  animation: spin .9s linear infinite;
+}
+@keyframes spin { to { transform: rotate(360deg); } }
+
+/* ========= Confidence bar ========= */
+.bar { height: 10px; background:#1b1b2a; border-radius: 999px; overflow: hidden; }
+.bar > span { display:block; height:100%; width:0%; transition: width .6s ease; border-radius: 999px; }
+
+/* ========= Tabs ========= */
+.tabs { display:flex; gap:8px; flex-wrap: wrap; }
+.tab {
+  padding:8px 12px;
+  border-radius: 10px;
+  background:#1a1a2c;
+  border:1px solid #2a2a44;
+  cursor:pointer;
+  color: var(--ink);
+  transition: background .15s ease, border-color .15s ease, transform .08s ease;
+}
+.tab:hover { transform: translateY(-1px); }
+.tab.active { background:#2b1f57; border-color:#5b47d6; }
+
+/* ========= Misc layout helpers ========= */
+.row { display:flex; gap:10px; align-items:center; }
+
+.linkRow {
+  display:flex;
+  align-items:center;
+  justify-content:space-between;
+  gap:12px;
+  background:#151528;
+  border:1px solid #26264a;
+  padding:12px;
+  border-radius:12px;
+}
+.linkRow a { color:#fff; text-decoration:none; }
+
+.muted { opacity:.72; color: var(--ink-soft); }
+
+/* ========= Header polish ========= */
+header { background: linear-gradient(180deg, rgba(17,17,26,.55), rgba(17,17,26,.20)); }
+
+/* ========= Responsive tweaks ========= */
+@media (max-width: 1100px) {
+  .container { padding: 0 16px; }
+}
+@media (max-width: 980px) {
+  /* if you switch your main grid to 1col on narrow screens, this still looks great */
+}

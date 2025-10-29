@@ -1,0 +1,47 @@
+{
+  "happy": {
+    "chill": [
+      {"title":"Sunny Lo-fi","source":"youtube","url":"https://www.youtube.com/results?search_query=happy+lofi"}
+    ],
+    "workout": [
+      {"title":"Good Vibes Pump","source":"youtube","url":"https://www.youtube.com/results?search_query=happy+workout+hits"}
+    ],
+    "focus": [
+      {"title":"Upbeat Focus","source":"youtube","url":"https://www.youtube.com/results?search_query=upbeat+focus+study"}
+    ]
+  },
+  "sad": {
+    "chill": [
+      {"title":"Cheer Up Mix","source":"youtube","url":"https://www.youtube.com/results?search_query=cheer+up+playlist"}
+    ],
+    "focus": [
+      {"title":"Gentle Focus","source":"youtube","url":"https://www.youtube.com/results?search_query=calm+focus+instrumental"}
+    ]
+  },
+  "angry": {
+    "workout": [
+      {"title":"Energy Booster","source":"youtube","url":"https://www.youtube.com/results?search_query=angry+workout+music"}
+    ],
+    "chill": [
+      {"title":"Cool Down","source":"youtube","url":"https://www.youtube.com/results?search_query=calm+down+music"}
+    ]
+  },
+  "neutral": {
+    "focus": [
+      {"title":"Lo-fi Beats","source":"youtube","url":"https://www.youtube.com/results?search_query=lofi+beats"}
+    ],
+    "chill": [
+      {"title":"Coffeehouse","source":"youtube","url":"https://www.youtube.com/results?search_query=coffeehouse+playlist"}
+    ]
+  },
+  "positive": {
+    "chill": [
+      {"title":"Feel Good Pop","source":"youtube","url":"https://www.youtube.com/results?search_query=feel+good+pop"}
+    ]
+  },
+  "negative": {
+    "chill": [
+      {"title":"Calm Instrumentals","source":"youtube","url":"https://www.youtube.com/results?search_query=calm+instrumental+music"}
+    ]
+  }
+}
